@@ -36,3 +36,34 @@
     transform: rotate(360deg);
   }
 }
+
+.modal .modal.modal-fixed-footer {
+  bottom: 0 !important;
+  top: 0 !important;
+  max-height: 100% !important;
+  width: 100% !important;
+}
+
+.gridBtn {
+  border: solid 1px #d1d1d1 !important;
+  margin: 1px !important;
+}
+/* 
+@media only screen and (min-width: 601px) {
+  .row .col.m4 {
+    width: 32.333333% !important
+  }
+} */
+.btn-block{
+  width: 100% !important
+}
+[type="radio"]+span:before, [type="radio"]+span:after {
+  visibility: hidden;
+}
+.break{
+  height: 120px;
+  display: block;
+}
+.lrg{
+  height: 4rem !important
+}
