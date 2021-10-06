@@ -17,26 +17,28 @@ export default function ({ data, update }) {
     "I am not sure at this time",
   ];
   const listItems = numbers.map((number) =>
-    <div className="col s12 m4">
-      <div style={{ height: "150px" }} className="card">
-        <div className="card-content">
-          <label>
-            <input
-              type="radio"
-              name="age"
-              onChange={handleChange}
-              value={number}
-            />
-            <h6 className="center">{number}</h6>
-          </label>
+    <div key={number} className="col s12 m6 l4">
+      <label
+        className="center box">
+        {/* {number !== ""?<span style={{marginTop: "35px", position: "fixed"}} className="material-icons green-text">check_circle</span>:""} */}
+
+        <div className="flow-text box-content">
+          <input
+            className="event"
+            type="radio"
+            name="age"
+            onChange={handleChange}
+            value={number}
+          />
+          <p style={{lineHeight: "28px", fontSize: "20px", padding: "5px"}}>{number}</p>
         </div>
-      </div>
+      </label>
     </div>
   );
   return (
     <div>
     <div className="row">
-      <h3>How willing are you to change to get what you want?</h3>
+      <h4>How willing are you to change to get what you want?</h4>
       {listItems}
       </div>
       <div className="break" />

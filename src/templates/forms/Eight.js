@@ -18,14 +18,14 @@ export default function ({ data, update }) {
       [name]: value
     }));
   };
-  function Disp(p){
+  // function Disp(p){
 
-    if(p){
-      return p
-    }else{
-      return 'n/a'
-    }
-  }
+  //   if(p){
+  //     return p
+  //   }else{
+  //     return 'n/a'
+  //   }
+  // }
   return (
     <div>
       <h5>Schedule a consultation</h5>
@@ -70,7 +70,7 @@ export default function ({ data, update }) {
       onChange={handleChange}
       />
       <div className="break" />
-      <Disp/>
+      {/* <Disp/> */}
       {/* {JSON.stringify(newData)}<br /> */}
       <button className="btn btn-block blue" onClick={() => update("q8", newData)}>Next</button>
     </div>

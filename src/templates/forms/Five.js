@@ -30,7 +30,7 @@ export default function ({ data, update }) {
       {/* {JSON.stringify(newData)} */}
 
       {newData !== "" ?
-        <button className="btn btn-block" onClick={() => update("q5", newData)}>Next</button> :
+        <button className="btn btn-block blue" onClick={() => update("q5", newData)}>Next</button> :
         <button disabled className="btn btn-block">Next</button>
       }
     </div>

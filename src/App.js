@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
   Link
@@ -17,15 +17,15 @@ export default function App() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/form">form</Link>
+              <Link to="/form">Form</Link>
             </li>
           </ul>
         </nav>
         <Switch>
-          <Route path="/form">
+          <Route exact path="/form">
             <Main />
           </Route>
-          <Route path="/">
+          <Route exact path="/">
             <Home />
             
 

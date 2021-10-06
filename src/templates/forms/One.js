@@ -3,6 +3,7 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+
 export default function ({ data, update }) {
   const [newData, setState] =
     useState("");
@@ -39,7 +40,7 @@ export default function ({ data, update }) {
         <h3>What is your age range?</h3>
         {listItems}
       </div>
-      <h5>{newData}</h5>
+      {/* <h5>{newData}</h5> */}
       <div className="break" />
 
       {newData !== "" ?
