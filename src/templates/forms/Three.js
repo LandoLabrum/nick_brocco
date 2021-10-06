@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { RadioGroup, Row, Textarea } from 'react-materialize';
 
 export default function ({ data, update }) {
   const [newData, setState] = useState("");
@@ -18,23 +17,29 @@ export default function ({ data, update }) {
     }
   }
   return (
-    <div>
-      <div className="row">
-        i am plisten 2
+    <div >
+      <br/>
+      <br/>
+      <br/>
+      <div className="card">
+      <div className="row card-content">
         <h5>To the best of your ability paint a picture with your words of your desire!</h5>
+        <br/>
         {err}
         <input
+          placeholder="Desires and Goals here"
           value={newData}
           type="text"
           onChange={handleChange}
           name="desire"
         />
       </div>
-      <div className="break" />
-      {JSON.stringify(newData)}
+      </div>
+      
+      {/* {JSON.stringify(newData)} */}
       
       { newData.length !== "" ?
-        <button className="btn btn-block" onClick={handleErrors}>Next</button> :
+        <button className="btn btn-block blue" onClick={handleErrors}>Next</button> :
         <button disabled className="btn btn-block">Next</button>
       }
     </div>

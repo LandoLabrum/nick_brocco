@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { RadioGroup, Row, Textarea } from 'react-materialize';
 
 export default function ({ data, update }) {
   const [newData, setState] = useState("");
@@ -30,10 +29,10 @@ export default function ({ data, update }) {
         />
       </div>
       <div className="break" />
-      {JSON.stringify(newData)}
+      {/* {JSON.stringify(newData)} */}
       
       { newData.length !== "" ?
-        <button className="btn btn-block" onClick={handleErrors}>Next</button> :
+        <button className="btn btn-block blue" onClick={handleErrors}>Next</button> :
         <button disabled className="btn btn-block">Next</button>
       }
     </div>

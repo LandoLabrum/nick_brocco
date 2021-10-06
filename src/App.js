@@ -27,6 +27,8 @@ export default function App() {
           </Route>
           <Route path="/">
             <Home />
+            
+
           </Route>
         </Switch>
       </div>

@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { DatePicker, TimePicker } from 'react-materialize';
-import "materialize-css"
 
 export default function ({ data, update }) {
   const [newData, setState] =
@@ -9,17 +7,25 @@ export default function ({ data, update }) {
       lName: "",
       email: "",
       tel: "",
-      date: null,
-      time: null
+      date: "",
+      time: ""
     });
   const handleChange = e => {
     const { name, value } = e.target;
+
     setState(prevState => ({
       ...prevState,
       [name]: value
     }));
   };
+  function Disp(p){
 
+    if(p){
+      return p
+    }else{
+      return 'n/a'
+    }
+  }
   return (
     <div>
       <h5>Schedule a consultation</h5>
@@ -51,137 +57,22 @@ export default function ({ data, update }) {
         onChange={handleChange}
         name="tel"
       />
-      <DatePicker
-        label="date"
-        value={newData.date}
-        name="date"
-        onChange={(newDate) => {
-          handleChange({
-            target: {
-              name: "date",
-              value: newDate
-            }
-          })
-        }}
-        options={{
-          autoClose: false,
-          container: null,
-          defaultDate: null,
-          disableDayFn: null,
-          disableWeekends: false,
-          events: [],
-          firstDay: 0,
-          format: 'mmm dd, yyyy',
-          i18n: {
-            cancel: 'Cancel',
-            clear: 'Clear',
-            done: 'Ok',
-            months: [
-              'January',
-              'February',
-              'March',
-              'April',
-              'May',
-              'June',
-              'July',
-              'August',
-              'September',
-              'October',
-              'November',
-              'December'
-            ],
-            monthsShort: [
-              'Jan',
-              'Feb',
-              'Mar',
-              'Apr',
-              'May',
-              'Jun',
-              'Jul',
-              'Aug',
-              'Sep',
-              'Oct',
-              'Nov',
-              'Dec'
-            ],
-            nextMonth: '›',
-            previousMonth: '‹',
-            weekdays: [
-              'Sunday',
-              'Monday',
-              'Tuesday',
-              'Wednesday',
-              'Thursday',
-              'Friday',
-              'Saturday'
-            ],
-            weekdaysAbbrev: [
-              'S',
-              'M',
-              'T',
-              'W',
-              'T',
-              'F',
-              'S'
-            ],
-            weekdaysShort: [
-              'Sun',
-              'Mon',
-              'Tue',
-              'Wed',
-              'Thu',
-              'Fri',
-              'Sat'
-            ]
-          },
-          isRTL: false,
-          maxDate: null,
-          minDate: null,
-          onClose: null,
-          onDraw: null,
-          onOpen: null,
-          onSelect: null,
-          parse: null,
-          setDefaultDate: false,
-          showClearBtn: false,
-          showDaysInNextAndPreviousMonths: false,
-          showMonthAfterYear: false,
-          yearRange: 2
-        }}
+      <input 
+      type="date"
+      value={newData.date}
+      name="date"
+      onChange={handleChange}
       />
-      <input id="timepicker_ampm_dark" className="timepicker" type="time"/>
-      <TimePicker
-        type="time"
-        label="time"
-        value={newData.time}
-        name="time"
-        onChange={ (newTime) => {
-          handleChange({
-            target: {
-              name: "time",
-              value: newTime
-            }
-          })
-        }}
-        
-        options={{
-          vibrate: true,
-          onSelect: null,
-          defaultTime: 'now',
-          duration: 350,
-          fromNow: 0,
-          i18n: {
-            cancel: 'Cancel',
-            clear: 'Clear',
-            done: 'Ok'
-          },
-        }}
+      <input 
+      type="time"
+      value={newData.time}
+      name="time"
+      onChange={handleChange}
       />
-
-      {JSON.stringify(newData)}<br />
-
-
-      <button className="btn" onClick={() => update("q8", newData)}>Next</button>
+      <div className="break" />
+      <Disp/>
+      {/* {JSON.stringify(newData)}<br /> */}
+      <button className="btn btn-block blue" onClick={() => update("q8", newData)}>Next</button>
     </div>
   );
 }

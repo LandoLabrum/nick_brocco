@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ProgressBar } from 'react-materialize';
+// import { ProgressBar } from 'react-materialize';
 import "../App.css"
 import One from "./forms/One";
 import Two from "./forms/Two"
@@ -15,7 +15,7 @@ const subPageNum = 9
 
 export default function App() {
   const [page, setPage] = useState(1);
-  console.log(page)
+  // console.log(page)
   const [data, setData] = useState({
     q1: {},
     q2: {},
@@ -33,7 +33,7 @@ export default function App() {
       return { ...data, [type]: newData };
     });
   }
-  function backPage(){
+  function backPage() {
     setPage((page) => page - 1);
   }
 
@@ -43,53 +43,59 @@ export default function App() {
   }
   return (
     <div className="container">
-      {page !== 1 && <button className="btn" onClick={() => backPage()}>Previous</button>}
+      
 
       <br />
       <small style={{ fontSize: "15px" }}>Progress</small>
-      <ProgressBar className="red" max="5" progress={page * 25} />
+      <div className="progress">
+        <div style={{width: 12.5*page+"%"}} className="determinate red"></div>
+      </div>
       <br />
       {/* the content goes here */}
       <div>
-        {page === 1 && <One data={data.q1} update={updateData}/>}
+        {page === 1 && <One data={data.q1} update={updateData} />}
 
         {page === 2 && (
-          <Two data={data.q2} update={updateData}  back={backPage}/>
+          <Two data={data.q2} update={updateData} back={backPage} />
         )}
 
         {page === 3 && (
-          <Three data={data.q3} update={updateData} back={backPage}/>
+          <Three data={data.q3} update={updateData} back={backPage} />
         )}
 
         {page === 4 && (
-          <Four data={data.q4} update={updateData} back={backPage}/>
+          <Four data={data.q4} update={updateData} back={backPage} />
         )}
 
         {page === 5 && (
-          <Five data={data.q5} update={updateData} back={backPage}/>
+          <Five data={data.q5} update={updateData} back={backPage} />
         )}
 
         {page === 6 && (
-          <Six data={data.q6} update={updateData} back={backPage}/>
+          <Six data={data.q6} update={updateData} back={backPage} />
         )}
 
         {page === 7 && (
-          <Seven data={data.q7} update={updateData} back={backPage}/>
+          <Seven data={data.q7} update={updateData} back={backPage} />
         )}
 
         {page === 8 && (
-          <Eight data={data.q8} update={updateData} back={backPage}/>
+          <Eight data={data.q8} update={updateData} back={backPage} />
         )}
         
-        {page === subPageNum && <Submit  back={backPage}/>}
+
+        {page === subPageNum && <Submit back={backPage} />}
       </div>
+      {page !== 1 && <button className="btn btn-flat" onClick={() => backPage()}><i className="material-icons left">arrow_back_ios</i> Previous</button>}
+
+
       {page === subPageNum && (
         <button type="submit" onClick={submit}>
           Submit
         </button>
       )}
-      <br/>
-      <br/>
+      <br />
+      <br />
       {JSON.stringify(data)}
     </div>
   );
