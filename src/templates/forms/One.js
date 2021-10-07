@@ -17,10 +17,10 @@ export default function ({ data, update }) {
 
   const numbers = ["Teens", "20s", "30s", "40s", "50s", "60s+"];
   const listItems = numbers.map((number) =>
-    <div key={number} className="col s12 m4">
+    <div key={number} className="col s6 m4">
       <label
         className="center box">
-        <div className="flow-text box-content">
+        <div className="flow-text box-content" >
           <input
             className="event"
             type="radio"
@@ -35,18 +35,19 @@ export default function ({ data, update }) {
   );
 
   return (
-    <div>
+    <>
       <div className="row ">
         <h3>What is your age range?</h3>
         {listItems}
       </div>
       {/* <h5>{newData}</h5> */}
-      <div className="break" />
-
+      {/* <div className="break" /> */}
+      <footer >
       {newData !== "" ?
-        <button className="btn btn-block blue" onClick={() => update("q1", newData)}>Next</button> :
+        <button className="btn btn-block prim" onClick={() => update("q1", newData)}>Next</button> :
         <button disabled alt="pick a choice from above" className="btn btn-block">Next</button>
       }
-    </div>
+      </footer>
+    </>
   );
 }

@@ -62,22 +62,130 @@
 .box-content{
   height: 150px;
   line-height: 150px;
-  border: solid 1px #282c34;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: clamp(1px, 5vw, 34px) !important;
+  background-color: #cecece;
 }
 .box-content:hover  {
   opacity: .7;
   border: solid 3px rgb(181, 181, 181);
 }
-.box-content:active  {
+/* .box-content:active  {
   background-color: #282c34 !important;
-}
+} */
 .btn:hover, .btn-large:hover, .btn-small:hover {
   background-color: rgba(0,0,0,0);
 }
 .acti{
-  margin-top: 35px;
-  position: absolute;
+  border: none !important;
+}
+/* @media only screen and (max-width: 992px) {
+  .acti{
+    margin-top: 2.4rem;
+    margin-left: .5rem;
+}
+} */
+.material-icons {
+  font-size: 35px;
+}
+.box-content-color {
+  background: linear-gradient(203deg, #d0d7e0, #fcfeff);
+  background-size: 400% 400%;
+
+  -webkit-animation: AnimationName 7s ease infinite;
+  -moz-animation: AnimationName 7s ease infinite;
+  animation: AnimationName 7s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+label{
+  color: rgb(48, 48, 48) !important;
+  text-transform: uppercase;
+  font-weight: 800 !important;
+}
+input[type=range]::-webkit-slider-thumb {
+  background-color:#208abb;
+}
+input[type=range]::-moz-range-thumb {
+  background-color:#208abb;
+}
+input[type=range]::-ms-thumb {
+  background-color: #208abb;
+}
+
+/***** These are to edit the thumb and the text inside the thumb *****/
+input[type=range] + .thumb {
+  background-color: #dedede;
+}
+input[type=range] + .thumb.active .value {
+  color: red;
+}
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+.prim {
+  background: linear-gradient(203deg, #d0d7e0, #208abb);
+  background-size: 400% 400%;
+
+  -webkit-animation: AnimationName 0s ease infinite;
+  -moz-animation: AnimationName 0s ease infinite;
+  animation: AnimationName 0s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+nav{
+  background-color: rgba(0,0,0,0);
+  box-shadow: none !important;
+}
+.green {
+  background-color: #4CAF50 !important;
+}
+.btn-flat{
+  color: #d0d7e0
+}
+nav ul a {
+  color: #797979
+}
+p{
+  color: #3c3c3c
 }

@@ -48,7 +48,7 @@ export default function App() {
       <br />
       <small style={{ fontSize: "15px" }}>Progress</small>
       <div className="progress">
-        <div style={{width: 12.5*page+"%"}} className="determinate red"></div>
+        <div style={{width: 12.5*page+"%"}} className="determinate indigo lighten-1"></div>
       </div>
       <br />
       {/* the content goes here */}
@@ -86,17 +86,24 @@ export default function App() {
 
         {page === subPageNum && <Submit back={backPage} />}
       </div>
-      {page !== 1 && <button className="btn btn-flat" onClick={() => backPage()}><i className="material-icons left">arrow_back_ios</i> Previous</button>}
+      {page !== 1 && 
+    
+      <button className="btn btn-flat" onClick={() => backPage()}>
+        <i className="material-icons left">arrow_back_ios</i> Previous</button>
+       }
 
 
-      {page === subPageNum && (
-        <button type="submit" onClick={submit}>
+      {page === subPageNum && (<>
+        
+        <br/>
+        <br/>
+        <button type="submit" className="btn btn-block prim"onClick={submit}>
           Submit
         </button>
+        </>
       )}
-      <br />
-      <br />
-      {JSON.stringify(data)}
+    
+      
     </div>
   );
 }

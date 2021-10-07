@@ -18,21 +18,30 @@ export default function ({ data, update }) {
   }
   return (
     <div>
-      <div className="row">
-        <h5>Why are you ready to change now, and not next year?</h5>
+      <div className="row card">
+      <div className="card-content">
+        <h5 className="grey-text text-darken-3">Why are you ready to change now, and not next year?</h5>
         {err}
-        <input
-          value={newData}
-          type="text"
-          onChange={handleChange}
-          name="desire"
-        />
+        <br/>
+
+              <div className="input-field ">
+
+<input
+  placeholder=""
+  value={newData}
+  type="text"
+  onChange={handleChange}
+  name="desire"
+/>
+<label className="grey-text text-lighten-1">Please be descriptive</label>
+</div>
+      </div>
       </div>
       <div className="break" />
       {/* {JSON.stringify(newData)} */}
       
       { newData.length !== "" ?
-        <button className="btn btn-block blue" onClick={handleErrors}>Next</button> :
+        <button className="btn btn-block prim" onClick={handleErrors}>Next</button> :
         <button disabled className="btn btn-block">Next</button>
       }
     </div>

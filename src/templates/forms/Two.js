@@ -52,19 +52,20 @@ export default function ({ data, update }) {
 
   function Li(props) {
     return (
-      <div className="col s12 m6">
-      <label 
-      className="center box">
-        {props.v == "true"?<span className="acti material-icons green-text">check_circle</span>:""}
-        <div className="box-content">
+      <div key={props.n} className="col s12 m6 l4">
+      <label
+        className="center box">
+        <div className="flow-text box-content ">
           <input
-            className="eve"
+            className="event"
             type="checkbox"
             name={props.n}
             onChange={handleChange}
             value={props.v}
           />
-          <p style={{lineHeight: "28px", fontSize: "20px", padding: "5px"}}>{props.l}</p>
+          
+          <p style={{lineHeight: "28px", fontSize: "13px", padding: "7px"}}
+          className={props.v==""?"":"white-text"}>{props.l}</p>
         </div>
       </label>
     </div>
@@ -97,15 +98,16 @@ export default function ({ data, update }) {
           l="I am completely satisfied with my life and believe there are no improvements to be made"
         />
       </div>
-      <div className="break" />
+      {/* <div className="break" /> */}
 
       {/* {JSON.stringify(newData)} */}
-      <br/>
+      <footer >
       {Validataion(newData) ?
-        <button className="btn btn-block blue" onClick={() => update("q2", newData)}>Next</button> :
+        <button className="btn btn-block prim" onClick={() => update("q2", newData)}>Next</button> :
         <button disabled className="btn btn-block">Next</button>
       }
-
+      
+   </footer>
     </div>
   );
 }

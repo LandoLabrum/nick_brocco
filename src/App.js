@@ -11,9 +11,9 @@ export default function App() {
   return (
     <Router>
       <div>
-        <nav>
+        <nav >
           <ul>
-            <li>
+            <li >
               <Link to="/">Home</Link>
             </li>
             <li>
@@ -37,6 +37,8 @@ export default function App() {
 }
 
 function Home() {
-  return <h2>Home</h2>;
+  return <div className="container">
+    <h2>Home</h2>
+  </div>;
 }
 

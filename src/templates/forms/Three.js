@@ -23,25 +23,31 @@ export default function ({ data, update }) {
       <br/>
       <div className="card">
       <div className="row card-content">
-        <h5>To the best of your ability paint a picture with your words of your desire!</h5>
+        <h5 className="grey-text text-darken-3">To the best of your ability paint a picture with your words of your desire!</h5>
         <br/>
         {err}
+        <div className="input-field ">
+
         <input
-          placeholder="Desires and Goals here"
+          placeholder=""
           value={newData}
           type="text"
           onChange={handleChange}
           name="desire"
         />
+        <label className="grey-text text-lighten-1">Desires and Goals here</label>
+        </div>
       </div>
       </div>
       
       {/* {JSON.stringify(newData)} */}
-      
+      <footer >
+
       { newData.length !== "" ?
-        <button className="btn btn-block blue" onClick={handleErrors}>Next</button> :
+        <button className="btn btn-block prim" onClick={handleErrors}>Next</button> :
         <button disabled className="btn btn-block">Next</button>
-      }
+      }  
+   </footer>
     </div>
   );
 }

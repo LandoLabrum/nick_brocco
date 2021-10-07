@@ -57,22 +57,26 @@ export default function ({ data, update }) {
         onChange={handleChange}
         name="tel"
       />
+      Date
       <input 
       type="date"
       value={newData.date}
       name="date"
       onChange={handleChange}
       />
+      Time
       <input 
       type="time"
       value={newData.time}
       name="time"
       onChange={handleChange}
       />
-      <div className="break" />
+      {/* <div className="break" />
+       */}
+       <br/>
       {/* <Disp/> */}
       {/* {JSON.stringify(newData)}<br /> */}
-      <button className="btn btn-block blue" onClick={() => update("q8", newData)}>Next</button>
+      <button className="btn btn-block prim" onClick={() => update("q8", newData)}>Next</button>
     </div>
   );
 }

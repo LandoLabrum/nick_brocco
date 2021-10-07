@@ -17,12 +17,12 @@ export default function ({ data, update }) {
     "I am not sure at this time",
   ];
   const listItems = numbers.map((number) =>
-    <div key={number} className="col s12 m6 l4">
+    <div key={number} className="col s6 l4">
       <label
         className="center box">
         {/* {number !== ""?<span style={{marginTop: "35px", position: "fixed"}} className="material-icons green-text">check_circle</span>:""} */}
 
-        <div className="flow-text box-content">
+        <div className="flow-text box-content ">
           <input
             className="event"
             type="radio"
@@ -41,10 +41,9 @@ export default function ({ data, update }) {
       <h4>How willing are you to change to get what you want?</h4>
       {listItems}
       </div>
-      <div className="break" />
       {/* {JSON.stringify(newData)} */}
       {newData !== "" ?
-        <button className="btn btn-block blue" onClick={() => update("q6", newData)}>Next</button> :
+        <button className="btn btn-block prim" onClick={() => update("q6", newData)}>Next</button> :
         <button disabled className="btn btn-block">Next</button>
       }
 
