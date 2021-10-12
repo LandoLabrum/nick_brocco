@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import lead from "/Users/landolabrum/code/clients/nick_brocco/main/src/media/lead_the_way.png"
-import nick from "/Users/landolabrum/code/clients/nick_brocco/main/src/media/lead_the_way_nick.webp"
+import nick from "/Users/landolabrum/code/clients/nick_brocco/main/src/media/lead_the_way_nick.png"
 import VideoSection from "./components/videoSection"
 export default function Home() {
     return <div>
         {/* <h2>Home</h2> */}
         <section className="">
-            <div className="row   valign-wrapper">
+            <div className="row  blue lighten-4 valign-wrapper">
                 <div className="col s12 m4 offset-m1 center hide-on-small-and-down">
                     <Link to="/form">
                         <div className="break" />
@@ -20,8 +20,8 @@ export default function Home() {
                 </div>
                 <div className="col s12 m6">
                     <div className="container">
-                    <h4>Lorem Ipsum</h4>
-                        <img className="responsive-img" src={nick} />
+                    {/* <h4>Lorem Ipsum</h4> */}
+                        <img className="responsive-img blue lighten-3" src={nick} />
                     </div>
                 </div>
                 <div className="break" />
