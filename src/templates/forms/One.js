@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -8,6 +9,7 @@ export default function ({ data, update }) {
   const [newData, setState] =
     useState("");
   const handleChange = e => {
+    
     const { name, value } = e.target;
     setState(
       value
@@ -33,6 +35,9 @@ export default function ({ data, update }) {
       </label>
     </div>
   );
+  useEffect(()=>{ // this will re run every time search changes
+    if(newData!=='') update("age_range", newData)
+ }, [newData])
 
   return (
     <>
@@ -42,12 +47,12 @@ export default function ({ data, update }) {
       </div>
       {/* <h5>{newData}</h5> */}
       {/* <div className="break" /> */}
-      <footer >
+      {/* <footer >
       {newData !== "" ?
-        <button className="btn btn-block prim" onClick={() => update("q1", newData)}>Next</button> :
+        <button className="btn btn-block prim" onClick={() => update("age_range", newData)}>Next</button> :
         <button disabled alt="pick a choice from above" className="btn btn-block">Next</button>
       }
-      </footer>
+      </footer> */}
     </>
   );
 }

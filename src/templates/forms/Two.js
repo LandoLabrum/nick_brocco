@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function ({ data, update }) {
   const [newData, setState] = useState({
@@ -51,11 +51,12 @@ export default function ({ data, update }) {
   }
 
   function Li(props) {
+    
     return (
-      <div key={props.n} className="col s12 m6 l4">
+      <div key={props.n} className="col s6">
       <label
         className="center box">
-        <div className="flow-text box-content ">
+        <div className="box-content ">
           <input
             className="event"
             type="checkbox"
@@ -64,7 +65,8 @@ export default function ({ data, update }) {
             value={props.v}
           />
           
-          <p style={{lineHeight: "28px", fontSize: "13px", padding: "7px"}}
+          <p 
+          style={{lineHeight: "1rem", fontSize: ".8rem", padding: "7px", maxWidth: "100%"}}
           className={props.v==""?"":"white-text"}>{props.l}</p>
         </div>
       </label>
@@ -103,7 +105,7 @@ export default function ({ data, update }) {
       {/* {JSON.stringify(newData)} */}
       <footer >
       {Validataion(newData) ?
-        <button className="btn btn-block prim" onClick={() => update("q2", newData)}>Next</button> :
+        <button className="btn btn-block prim" onClick={() => update("describe", newData)}>Next</button> :
         <button disabled className="btn btn-block">Next</button>
       }
       

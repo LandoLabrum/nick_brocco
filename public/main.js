@@ -28,3 +28,11 @@ document.addEventListener('click', function (event) {
     
 }, false);
 
+// $(document).ready(function () {
+
+// });
+
+
+// document.addEventListener('DOMContentLoaded', function () {
+//     alert()
+//   }, false);

@@ -1,53 +1,58 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 
 export default function ({ data, update }) {
-  const [newData, setState] = useState("");
-  const [err, setErr] = useState('')
+  const [newData, setState] =
+    useState("");
   const handleChange = e => {
+    
     const { name, value } = e.target;
-      setState(
-        value
-     );
+    setState(
+      value
+    )
   };
-  function handleErrors() {
-    if (newData.length > 10) {
-      update("q3", newData)
-    } else {
-      setErr(<span className="orange-text">** Please give a more detailed description.</span>)
-    }
-  }
-  return (
-    <div >
-      <br/>
-      <br/>
-      <br/>
-      <div className="card">
-      <div className="row card-content">
-        <h5 className="grey-text text-darken-3">To the best of your ability paint a picture with your words of your desire!</h5>
-        <br/>
-        {err}
-        <div className="input-field ">
+  const [show, setShow] = useState("");
 
-        <input
-          placeholder=""
-          value={newData}
-          type="text"
-          onChange={handleChange}
-          name="desire"
-        />
-        <label className="grey-text text-lighten-1">Desires and Goals here</label>
+  const numbers = ["health", "wealth", "love", "happiness"];
+  const listItems = numbers.map((number) =>
+    <div key={number} className="col s6">
+      <label
+        className="center box">
+        <div className="flow-text box-content" >
+          <input
+            className="event"
+            type="radio"
+            name="age"
+            onChange={handleChange}
+            value={number}
+          />
+          {number}
         </div>
-      </div>
-      </div>
-      
-      {/* {JSON.stringify(newData)} */}
-      <footer >
-
-      { newData.length !== "" ?
-        <button className="btn btn-block prim" onClick={handleErrors}>Next</button> :
-        <button disabled className="btn btn-block">Next</button>
-      }  
-   </footer>
+      </label>
     </div>
+  );
+  useEffect(()=>{ // this will re run every time search changes
+    if(newData!=='') update("desire", newData)
+ }, [newData])
+
+  return (
+    <>
+      <div className="row ">
+        <h4>Which aspect of your life, do you wish to improve?</h4>
+        {listItems}
+      </div>
+      {/* <h5>{newData}</h5> */}
+      {/* <div className="break" /> */}
+      <footer >
+      {/* {newData !== "" ?
+        <button className="btn btn-block prim" onClick={() => update("change", newData)}>Next</button> :
+        <button disabled alt="pick a choice from above" className="btn btn-block">Next</button>
+      } */}
+      </footer>
+    </>
   );
 }

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // import { RadioGroup, Row, Textarea } from 'react-materialize';
 
 export default function ({ data, update }) {
@@ -14,7 +14,7 @@ export default function ({ data, update }) {
     "Everybody",
   ];
   const listItems = numbers.map((number) =>
-    <div key={number} className="col s6 l4">
+    <div key={number} className="col s6">
       <label
         className="center box">
         {/* {number !== ""?<span style={{marginTop: "35px", position: "fixed"}} className="material-icons green-text">check_circle</span>:""} */}
@@ -32,6 +32,9 @@ export default function ({ data, update }) {
       </label>
     </div>
   );
+  useEffect(()=>{ // this will re run every time search changes
+    if(newData!=='') update("listen", newData)
+ }, [newData])
   return (
     <div>
       <div className="row">
@@ -40,11 +43,11 @@ export default function ({ data, update }) {
       </div>
       {/* <h5>{newData}</h5> */}
       {/* <div className="break" /> */}
-
+{/* 
       {newData !== "" ?
-        <button className="btn btn-block prim" onClick={() => update("q4", newData)}>Next</button> :
+        <button className="btn btn-block prim" onClick={() => update("listen", newData)}>Next</button> :
         <button disabled className="btn btn-block">Next</button>
-      }
+      } */}
     </div>
   );
 }

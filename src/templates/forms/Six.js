@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // import { RadioGroup, Checkbox } from 'react-materialize';
 
 export default function ({ data, update }) {
@@ -17,7 +17,7 @@ export default function ({ data, update }) {
     "I am not sure at this time",
   ];
   const listItems = numbers.map((number) =>
-    <div key={number} className="col s6 l4">
+    <div key={number} className="col s6 ">
       <label
         className="center box">
         {/* {number !== ""?<span style={{marginTop: "35px", position: "fixed"}} className="material-icons green-text">check_circle</span>:""} */}
@@ -30,11 +30,14 @@ export default function ({ data, update }) {
             onChange={handleChange}
             value={number}
           />
-          <p style={{lineHeight: "28px", fontSize: "20px", padding: "5px"}}>{number}</p>
+          <p style={{lineHeight: "1rem", fontSize: ".9rem", padding: "7px"}}>{number}</p>
         </div>
       </label>
     </div>
   );
+  useEffect(()=>{ // this will re run every time search changes
+    if(newData!=='') update("willing", newData)
+ }, [newData])
   return (
     <div>
     <div className="row">
@@ -42,10 +45,10 @@ export default function ({ data, update }) {
       {listItems}
       </div>
       {/* {JSON.stringify(newData)} */}
-      {newData !== "" ?
-        <button className="btn btn-block prim" onClick={() => update("q6", newData)}>Next</button> :
+      {/* {newData !== "" ?
+        <button className="btn btn-block prim" onClick={() => update("willing", newData)}>Next</button> :
         <button disabled className="btn btn-block">Next</button>
-      }
+      } */}
 
     </div>
   );

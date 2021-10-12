@@ -11,19 +11,20 @@ export default function ({ data, update }) {
   return (
     <div>
       <div className="row">
-        <h5>How teachable are you?</h5>
+        <h4>How teachable are you?</h4>
+        <br/>
         <div className="card">
           <div className="card-content">
-
-
+        <span className="card-title"> {newData} / 10</span>
+        <br/>
             <p className="range-field">
               <input
               className="red"
-                name="q5"
                 onChange={handleChange}
                 value={newData}
                 type="range" min="0" max="10" />
             </p>
+            <br/>
           </div>
         </div>
       </div>
@@ -31,7 +32,7 @@ export default function ({ data, update }) {
       {/* {JSON.stringify(newData)} */}
 
       {newData !== "" ?
-        <button className="btn btn-block prim" onClick={() => update("q5", newData)}>Next</button> :
+        <button className="btn btn-block prim" onClick={() => update("teachable", newData)}>Next</button> :
         <button disabled className="btn btn-block">Next</button>
       }
     </div>
