@@ -1,8 +1,8 @@
 import { useState } from "react";
 import PhoneInput from 'react-phone-number-input/input'
-import ReactPlayer from 'react-player/youtube'
-
-
+import VideoSection from "../components/videoSection"
+import src from '../../media/contact.mp4'
+import cover from '../../media/lead_the_way.png'
 
 export default function ({ data, update }) {
 
@@ -57,22 +57,7 @@ export default function ({ data, update }) {
 
 
 
-
-        <div className="row">
-            <div className="col s12">
-                <h3></h3>
-            </div>
-            <div className="col s12 m8 offset-m2">
-                <div  className="video-container">
-                    <ReactPlayer
-                      // style={{height:"auto", width: "100%"}}
-                      playing={true}
-                      url='https://www.youtube.com/watch?v=e7OdXMhv9JE'
-                    />
-                </div>
-            </div>
-     
-        </div>
+ <VideoSection src={src} cover={cover} autoplay={true} controls={false}/>
         <hr/>
 
 

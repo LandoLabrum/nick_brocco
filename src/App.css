@@ -1,10 +1,40 @@
+.gradient-container {
+  background: linear-gradient(270deg, #b2b2c4, #ffffff);
+  background-size: 400% 400%;
+
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
 .max{
   font-weight: 400;
   color: #272727;
   letter-spacing: 5px;
 
 }
-
+.nick{
+  margin-top: -7px !important;
+  margin-bottom: -7px !important
+}
+.nick-container {
+  padding-bottom: 0px !important
+}
 /* .max-wrapper{
   background: linear-gradient(216deg, #a4a4a4, #2a2a2a);
   background-size: 400% 400%;
@@ -12,7 +42,30 @@
   animation: AnimationName 30s ease infinite;
 } */
 
+.lead-bg{
+  background: linear-gradient(270deg, #e1e1e1, #b8b8b8, #ffffff);
+  background-size: 600% 600%;
 
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
 
 
 /* ICONS */

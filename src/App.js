@@ -14,11 +14,10 @@ export default function App() {
       <div>
         <nav >
         <div className="nav-wrapper">
-        <a href="#" className="brand-logo center">
-        <Link to="/">
+
+        <Link className="brand-logo center" to="/">
           <img src="//cdn.shopify.com/s/files/1/1926/6067/files/vecotred_56x.png?v=1569295219"/>
           </Link>
-        </a>
           <ul>
             <li>
               
@@ -38,13 +37,7 @@ export default function App() {
             <Home />
           </Route>
         </Switch>
-        <footer classname="page-footer">
-          <div className="container center">
-         <h6>www.MyRealityEquation.com</h6>
-          {/* <div className="break"/> */}
-          <br/>
-          </div>
-        </footer>
+      
       </div>
     </Router>
   );

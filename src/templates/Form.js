@@ -41,7 +41,7 @@ export default function App() {
   }
   function submit() {
     // alert(JSON.stringify(data))
-    axios.post('/leads/', {
+    axios.post('/forms/', {
       method: 'post',
       body: data
     })
@@ -95,6 +95,7 @@ export default function App() {
       </div>
         <button className="btn btn-flat" onClick={() => backPage()}>
           <i className="material-icons left">arrow_back_ios</i> Previous</button>
+          <small>{JSON.stringify(data)}</small>
     </div>
   );
 }
