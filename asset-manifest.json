@@ -1,24 +1,26 @@
 {
   "files": {
-    "main.css": "/nick_brocco/static/css/main.a4ce3635.chunk.css",
-    "main.js": "/nick_brocco/static/js/main.38db69e9.chunk.js",
-    "main.js.map": "/nick_brocco/static/js/main.38db69e9.chunk.js.map",
-    "runtime-main.js": "/nick_brocco/static/js/runtime-main.1d1d8c9e.js",
-    "runtime-main.js.map": "/nick_brocco/static/js/runtime-main.1d1d8c9e.js.map",
-    "static/js/2.e232009d.chunk.js": "/nick_brocco/static/js/2.e232009d.chunk.js",
-    "static/js/2.e232009d.chunk.js.map": "/nick_brocco/static/js/2.e232009d.chunk.js.map",
-    "static/js/3.e246508f.chunk.js": "/nick_brocco/static/js/3.e246508f.chunk.js",
-    "static/js/3.e246508f.chunk.js.map": "/nick_brocco/static/js/3.e246508f.chunk.js.map",
+    "main.css": "/nick_brocco/static/css/main.82f28cfd.chunk.css",
+    "main.js": "/nick_brocco/static/js/main.0196c48b.chunk.js",
+    "main.js.map": "/nick_brocco/static/js/main.0196c48b.chunk.js.map",
+    "runtime-main.js": "/nick_brocco/static/js/runtime-main.23ea3af8.js",
+    "runtime-main.js.map": "/nick_brocco/static/js/runtime-main.23ea3af8.js.map",
+    "static/js/2.824865dd.chunk.js": "/nick_brocco/static/js/2.824865dd.chunk.js",
+    "static/js/2.824865dd.chunk.js.map": "/nick_brocco/static/js/2.824865dd.chunk.js.map",
+    "static/js/3.f0926cbc.chunk.js": "/nick_brocco/static/js/3.f0926cbc.chunk.js",
+    "static/js/3.f0926cbc.chunk.js.map": "/nick_brocco/static/js/3.f0926cbc.chunk.js.map",
     "index.html": "/nick_brocco/index.html",
-    "static/css/main.a4ce3635.chunk.css.map": "/nick_brocco/static/css/main.a4ce3635.chunk.css.map",
-    "static/js/2.e232009d.chunk.js.LICENSE.txt": "/nick_brocco/static/js/2.e232009d.chunk.js.LICENSE.txt",
+    "static/css/main.82f28cfd.chunk.css.map": "/nick_brocco/static/css/main.82f28cfd.chunk.css.map",
+    "static/js/2.824865dd.chunk.js.LICENSE.txt": "/nick_brocco/static/js/2.824865dd.chunk.js.LICENSE.txt",
+    "static/media/contact.ee2f8a39.mp4": "/nick_brocco/static/media/contact.ee2f8a39.mp4",
     "static/media/lead_the_way.0f6fb7cc.png": "/nick_brocco/static/media/lead_the_way.0f6fb7cc.png",
-    "static/media/lead_the_way_nick.d33914b9.webp": "/nick_brocco/static/media/lead_the_way_nick.d33914b9.webp"
+    "static/media/lead_the_way_nick.2d76dcca.png": "/nick_brocco/static/media/lead_the_way_nick.2d76dcca.png",
+    "static/media/testimonial.a5614c8f.mp4": "/nick_brocco/static/media/testimonial.a5614c8f.mp4"
   },
   "entrypoints": [
-    "static/js/runtime-main.1d1d8c9e.js",
-    "static/js/2.e232009d.chunk.js",
-    "static/css/main.a4ce3635.chunk.css",
-    "static/js/main.38db69e9.chunk.js"
+    "static/js/runtime-main.23ea3af8.js",
+    "static/js/2.824865dd.chunk.js",
+    "static/css/main.82f28cfd.chunk.css",
+    "static/js/main.0196c48b.chunk.js"
   ]
 }
