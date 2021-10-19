@@ -14,7 +14,7 @@ document.addEventListener('click', function (event) {
     if (!event.target.matches('.event')) return;
     event.preventDefault();
     var par = event.target.parentNode
-    console.log(par.classList.contains("green"))
+    // console.log(par.classList.contains("green"))
     // if(!par.classList.contains("green")){
         // par.removeChild(par.childNodes[0]);
     //     par.classList.toggle("box-content-color");

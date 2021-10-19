@@ -8,8 +8,8 @@ export default function ({ data, update }) {
 
   const [newData, setState] =
     useState({
-      firstName: "",
-      lastName: "",
+      fname: "",
+      lname: "",
       email: "",
       tel: "",
       date: "",
@@ -71,19 +71,19 @@ export default function ({ data, update }) {
 
           First Name
           <input
-            value={newData.firstName}
+            value={newData.fname}
             type="text"
             onChange={handleChange}
-            name="firstName"
+            name="fname"
           />
         </div>
         <div className="col s6">
           Last Name
           <input
-            value={newData.lastName}
+            value={newData.lname}
             type="text"
             onChange={handleChange}
-            name="lastName"
+            name="lname"
           />
         </div>
         <div className="col s12">
@@ -128,6 +128,11 @@ export default function ({ data, update }) {
             value={newData.time}
             name="time"
             onChange={handleChange}
+          />
+          <input
+            type="hidden"
+            value='myrealityequation.com'
+            name="src"
           />
           <br />
           <br />

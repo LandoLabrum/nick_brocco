@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import lead from "/Users/landolabrum/code/clients/nick_brocco/main/src/media/lead_the_way.png"
-import nick from "/Users/landolabrum/code/clients/nick_brocco/main/src/media/lead_the_way_nick.png"
+import lead from "../media/lead_the_way.png"
+import nick from "../media/lead_the_way_nick.png"
 import VideoSection from "./components/videoSection"
 import src from '../media/testimonial.mp4'
 import cover from '../media/lead_the_way.png'
@@ -28,6 +28,8 @@ export default function Home() {
                     <br/>
                     <br/>
                     <img className="responsive-img" style={{ height: "250px" }} src={lead} />
+                    <h6 className="max">FIND OUT EXACTLY HOW YOU CAN MANIFEST YOUR DESIRES.</h6>
+                        <br />
                     <Link to="/form">
                         <div className="waves-effect waves-light btn btn-block green accent-3">TAKE THE QUIZ <i className="material-icons">arrow_forward</i></div>
                     </Link>
@@ -52,7 +54,7 @@ export default function Home() {
         <div className="break" />
         </div>
         </div>
-        <div style={{ bottom: "0", position: "fixed", width: "100%", textAlign: "center" }}>
+        <div style={{ bottom: "0", width: "100%", textAlign: "center" }}>
             <h6>www.MyRealityEquation.com</h6>
             <br />
         </div>

@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import Form from "./templates/Form";
 import Home from "./templates/Home";
-
+import Logo from "./media/logo.png"
 export default function App() {
   return (
     <Router>
@@ -16,7 +16,7 @@ export default function App() {
         <div className="nav-wrapper">
 
         <Link className="brand-logo center" to="/">
-          <img src="//cdn.shopify.com/s/files/1/1926/6067/files/vecotred_56x.png?v=1569295219"/>
+          <img src={Logo}/>
           </Link>
           <ul>
             <li>

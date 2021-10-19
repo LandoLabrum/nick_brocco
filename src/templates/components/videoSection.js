@@ -271,7 +271,7 @@ export default class Player extends Component {
       windowWidth: window.innerWidth,
       windowHeight: window.innerHeight,
     }
-    console.log(this.props.isPlaying)
+    // console.log(this.props.isPlaying)
   }
 
   componentDidMount() {
@@ -351,7 +351,7 @@ export default class Player extends Component {
                 display: 'flex',
                 alignItems: 'center',
               }}>
-                    <progress value={this.state.progress}/>&nbsp;&nbsp;&nbsp;&nbsp; 
+                    {/* <progress value={this.state.progress}/>&nbsp;&nbsp;&nbsp;&nbsp;  */}
                 <span onClick={this.togglePlay}>
                   {this.state.isPlaying ? 
                   

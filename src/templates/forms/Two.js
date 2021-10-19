@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 
 export default function ({ data, update }) {
   const [newData, setState] = useState({
-      s1: "",
-      s2: "",
-      s3: "",
-      s4: ""
+      unsatisfied_no_help: "",
+      unsatisfied_help: "",
+      partly_satisfied: "",
+      satisfied: ""
     });
 
   const handleChange = e => {
@@ -14,18 +14,18 @@ export default function ({ data, update }) {
     if (value == "") {
       setState(prevState => ({
         ...prevState,
-        [name]: "true"
+        [name]: true
       }));
-    } else if (value == "true") {
+    } else if (value == true) {
       setState(prevState => ({
         ...prevState,
-        [name]: "false"
+        [name]: false
       }));
     }
-    else if (value == "false") {
+    else if (value == false) {
       setState(prevState => ({
         ...prevState,
-        [name]: "true"
+        [name]: true
       }));
     }
     else {
@@ -34,7 +34,7 @@ export default function ({ data, update }) {
         [name]: value
       }));
     }
-    console.log(e.target)
+    // console.log(e.target)
     e.preventDefault();
     e.target.classList.toggle("red");
   };
@@ -78,25 +78,25 @@ export default function ({ data, update }) {
     <div>
 
       <div className="row ">
-        <h3>Select all that describe you</h3>
+        <h3>Select all that describes you</h3>
         <Li
-          n="s1"
-          v={newData.s1}
+          n="unsatisfied_no_help"
+          v={newData.unsatisfied_no_help}
           l="I am Unsatisfied with my life and I believe nobody can help me"
         />
         <Li
-          n="s2"
-          v={newData.s2}
-          l="I am unsatisfied with my life and I need guidance,community, & encouragement"
+          n="unsatisfied_help"
+          v={newData.unsatisfied_help}
+          l="I am unsatisfied with my life and I need guidance,community, and encouragement"
         />
         <Li
-          n="s3"
-          v={newData.s3}
+          n="partly_satisfied"
+          v={newData.partly_satisfied}
           l="I am partly satisfied with my life and want to join a community of like-minded people"
         />
         <Li
-          n="s4"
-          v={newData.s4}
+          n="satisfied"
+          v={newData.satisfied}
           l="I am completely satisfied with my life and believe there are no improvements to be made"
         />
       </div>

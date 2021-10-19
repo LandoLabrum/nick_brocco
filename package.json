@@ -1,5 +1,5 @@
 {
-  "homepage": "http://landolabrum.github.io/nick_brocco/",
+  
   "name": "template",
   "version": "0.1.0",
   "private": true,
@@ -22,7 +22,6 @@
     "react-scripts": "^4.0.3",
     "web-vitals": "^1.0.1"
   },
-  "proxy": "http://34.219.76.188:8000/",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",

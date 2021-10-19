@@ -1,69 +1,11 @@
-// import { useState, useEffect } from "react";
-
-// function sleep(ms) {
-//   return new Promise(resolve => setTimeout(resolve, ms));
-// }
-
-
-// export default function ({ data, update }) {
-//   const [newData, setState] =
-//     useState("");
-//   const handleChange = e => {
-    
-//     const { name, value } = e.target;
-//     setState(
-//       value
-//     )
-//   };
-//   const [show, setShow] = useState("");
-
-//   const numbers = ["health", "wealth", "love", "happiness"];
-//   const listItems = numbers.map((number) =>
-//     <div key={number} className="col s6">
-//       <label
-//         className="center box">
-//         <div className="flow-text box-content" >
-//           <input
-//             className="event"
-//             type="radio"
-//             name="age"
-//             onChange={handleChange}
-//             value={number}
-//           />
-//           {number}
-//         </div>
-//       </label>
-//     </div>
-//   );
-//   useEffect(()=>{ // this will re run every time search changes
-//     if(newData!=='') update("desire", newData)
-//  }, [newData])
-
-//   return (
-//     <>
-//       <div className="row ">
-//         <h4>Which aspect of your life, do you wish to improve?</h4>
-//         {listItems}
-//       </div>
-//       {/* <h5>{newData}</h5> */}
-//       {/* <div className="break" /> */}
-//       <footer >
-//       {/* {newData !== "" ?
-//         <button className="btn btn-block prim" onClick={() => update("change", newData)}>Next</button> :
-//         <button disabled alt="pick a choice from above" className="btn btn-block">Next</button>
-//       } */}
-//       </footer>
-//     </>
-//   );
-// }
 import { useState, useEffect } from "react";
 
 export default function ({ data, update }) {
   const [newData, setState] = useState({
-      s1: "",
-      s2: "",
-      s3: "",
-      s4: ""
+      health: "",
+      wealth: "",
+      love: "",
+      happiness: ""
     });
 
   const handleChange = e => {
@@ -72,18 +14,18 @@ export default function ({ data, update }) {
     if (value == "") {
       setState(prevState => ({
         ...prevState,
-        [name]: "true"
+        [name]: true
       }));
-    } else if (value == "true") {
+    } else if (value == true) {
       setState(prevState => ({
         ...prevState,
-        [name]: "false"
+        [name]: false
       }));
     }
-    else if (value == "false") {
+    else if (value == false) {
       setState(prevState => ({
         ...prevState,
-        [name]: "true"
+        [name]: true
       }));
     }
     else {
@@ -92,7 +34,7 @@ export default function ({ data, update }) {
         [name]: value
       }));
     }
-    console.log(e.target)
+    // console.log(e.target)
     e.preventDefault();
     e.target.classList.toggle("red");
   };
@@ -136,25 +78,25 @@ export default function ({ data, update }) {
     <div>
 
       <div className="row ">
-        <h3>Select all that describe you</h3>
+        <h4>Which aspects of your life, do you wish to improve?</h4>
         <Li
-          n="s1"
-          v={newData.s1}
+          n="health"
+          v={newData.health}
           l="health"
         />
         <Li
-          n="s2"
-          v={newData.s2}
+          n="wealth"
+          v={newData.wealth}
           l="wealth"
         />
         <Li
-          n="s3"
-          v={newData.s3}
+          n="love"
+          v={newData.love}
           l="love"
         />
         <Li
-          n="s4"
-          v={newData.s4}
+          n="happiness"
+          v={newData.happiness}
           l="happiness"
         />
       </div>
@@ -163,7 +105,7 @@ export default function ({ data, update }) {
       {/* {JSON.stringify(newData)} */}
       <footer >
       {Validataion(newData) ?
-        <button className="btn btn-block prim" onClick={() => update("change", newData)}>Next</button> :
+        <button className="btn btn-block prim" onClick={() => update("desire", newData)}>Next</button> :
         <button disabled className="btn btn-block">Next</button>
       }
       

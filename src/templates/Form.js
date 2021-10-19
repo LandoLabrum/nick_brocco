@@ -12,7 +12,6 @@ import Eight from "./forms/Eight";
 
 import axios from 'axios';
 const subPageNum = 8
-
 export default function App() {
   const [res, setRes] = useState('');
   const [page, setPage] = useState(1);
@@ -40,13 +39,15 @@ export default function App() {
     setPage((page) => page - 1);
   }
   function submit() {
-    // alert(JSON.stringify(data))
-    axios.post('/forms/', {
-      method: 'post',
+  // "proxy": "http://18.144.78.59/",
+
+    axios.post('http://18.144.78.59/forms/', {
+      headers: {'Access-Control-Allow-Origin': '*'},
+      method: 'POST',
       body: data
     })
       .then(function (response) {
-        console.log(response.data['status']);
+        console.log(response.data);
         if(response.data['status']=='success'){
           setRes(<>
           <h4 style={{textTransform: "capitalize"}}>{response.data['status']}</h4>
@@ -54,14 +55,16 @@ export default function App() {
           </>
           )
         }else{
-          setRes(
-            <h4>{response.data['status']}</h4>
-            )
+          setRes(<>
+            <h6 className="orange-text">{JSON.stringify(response.data['errors'])}</h6>
+            </>)
         }
       })
   }
+  const resp = {"email":["lead with this email already exists."]}
   return (
     <div className="container">
+      {/* {JSON.stringify(data)} */}
       <br />
       <small style={{ fontSize: "15px" }}>Progress</small>
       <div className="progress">
@@ -95,7 +98,7 @@ export default function App() {
       </div>
         <button className="btn btn-flat" onClick={() => backPage()}>
           <i className="material-icons left">arrow_back_ios</i> Previous</button>
-          <small>{JSON.stringify(data)}</small>
+          {/* <small>{JSON.stringify(data)}</small> */}
     </div>
   );
 }
